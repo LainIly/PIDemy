@@ -1,0 +1,46 @@
+<div class="text-center mt-8">
+    <a routerLink="/algebra" 
+       class="inline-block bg-gray-500 text-white px-6 py-2 rounded-lg hover:bg-gray-600 transition-colors font-medium">
+      Volver
+    </a>
+  </div>
+  <br>
+  <div class="container mx-auto px-4 py-8 space-y-12">
+    
+    <div>
+      <h1 class="text-3xl font-bold text-gray-800 mb-6">📚 Polinomios</h1>
+      
+      <section class="bg-white rounded-lg shadow-md p-6">
+        <h2 class="text-2xl font-semibold text-blue-600 mb-4">📌 ¿Qué es un polinomio?</h2>
+        <p class="text-gray-700 mb-4">Un polinomio es una expresión algebraica formada por la suma de monomios.</p>
+  
+        <div class="bg-gray-50 p-4 rounded-md mt-4">
+          <h3 class="text-xl font-medium text-gray-800 mb-2">✨ Ejemplo</h3>
+          <p class="text-gray-700">Polinomio: <strong>3x² + 2x - 5</strong></p>
+        </div>
+      </section>
+  
+      <section class="bg-white rounded-lg shadow-md p-6 mt-6">
+        <h3 class="text-xl font-semibold text-gray-800 mb-4">📝 Identifica el grado del polinomio</h3>
+        <p class="text-gray-700 mb-2">¿Cuál es el grado del siguiente polinomio?</p>
+        <p class="text-gray-800 font-medium mb-4"><strong>{{ ejercicio }}</strong></p>
+  
+        <div class="flex flex-col items-center space-y-4">
+          <div class="flex items-center space-x-2">
+            <label for="respuesta" class="text-gray-700">Tu respuesta:</label>
+            <input type="number" id="respuesta" [(ngModel)]="respuestaUsuario" 
+                   class="border border-gray-300 rounded-md p-1 w-16 text-center focus:outline-none focus:ring-2 focus:ring-blue-500">
+          </div>
+  
+          <button (click)="verificarRespuesta()" 
+                  class="bg-blue-500 text-white px-4 py-1 rounded-md hover:bg-blue-600 transition-colors">
+            Verificar
+          </button>
+        </div>
+  
+        <p *ngIf="mensaje" class="mt-4 text-green-600 text-center">{{ mensaje }}</p>
+        <p *ngIf="explicacion" [innerHTML]="explicacion" class="mt-2 text-gray-700 text-center"></p>
+      </section>
+    </div>
+  </div>
+  

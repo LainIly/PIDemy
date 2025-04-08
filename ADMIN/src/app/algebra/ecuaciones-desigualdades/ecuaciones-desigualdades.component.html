@@ -1,0 +1,163 @@
+<div class="text-center mt-8">
+    <a routerLink="/algebra" 
+       class="inline-block bg-gray-500 text-white px-6 py-2 rounded-lg hover:bg-gray-600 transition-colors font-medium">
+      Volver
+    </a>
+  </div>
+<div class="container">
+    <h1 class="titulo">📚 Ecuaciones de primer grado</h1>
+  
+    <section class="teoria">
+      <p>Una ecuación de primer grado (o ecuación lineal) es una igualdad matemática donde la incógnita aparece con exponente 1. Tiene la forma general:</p>
+      <h1>ax+b=0</h1>
+      <ul>Donde:
+        <li>a y b son constantes(con a ≠ 0)</li>
+        <li>x es la incógnita que debemos encontrar.</li>
+      </ul>
+  
+      <div class="ejemplo">
+        <h3>✨ Ejemplo</h3>
+        <p>Si <strong>x + 3 = 7</strong>, entonces podemos resolverlo restando 3 en ambos lados:</p>
+        <p class="solucion"><strong>x = 7 - 3</strong></p>
+        <p class="solucion"><strong>x = 4</strong></p>
+      </div>
+    </section>
+  
+    <div class="contenedor">
+        <h3>📌 Ejercicio Práctico</h3>
+        <p>Resuelve la siguiente ecuación:</p>
+        <h2>{{ coefA }}x + {{ coefB }} = 0</h2>
+        <input class="respuesta" type="number" [(ngModel)]="respuestaUsuario" placeholder="Tu respuesta">
+        <button class="btn-verificar" (click)="verificarRespuesta()">Verificar</button>
+        <p>{{ mensaje }}</p>
+        <pre *ngIf="procedimiento?.length">{{ procedimiento }}</pre>
+      </div>
+  </div>
+
+  <div class="container">
+    <h1 class="titulo">📚 Sistemas de Ecuaciones Lineales</h1>
+  
+    <section class="teoria">
+      <p>Un sistema de ecuaciones lineales es un conjunto de dos o más ecuaciones de primer grado con dos o más incógnitas. Se resuelven para encontrar los valores que cumplen ambas ecuaciones simultáneamente.</p>
+  
+      <div class="ejemplo">
+        <h3>Ejemplo (Método de Sustitución)</h3>
+        <p>Dado el sistema:</p>
+        <p>2x + y = 8</p>
+        <p>x - y = 2</p>
+        <p><strong>Paso 1:</strong> Despejar una variable en una ecuación</p>
+        <p>De la segunda ecuación: x = y + 2</p>
+        <p><strong>Paso 2:</strong> Sustituir en la otra ecuación</p>
+        <p>2(y + 2) + y = 8</p>
+        <p>2y + 4 + y = 8</p>
+        <p>3y = 4</p>
+        <p>y = 4/3</p>
+        <p><strong>Paso 3:</strong> Sustituir y en la ecuación despejada</p>
+        <p>x = (4/3) + 2 = 10/3</p>
+        <p><strong>Solución:</strong> x = 10/3, y = 4/3</p>
+      </div>
+    </section>
+  
+    <div class="contenedor">
+        <h2>Resuelve el sistema de ecuaciones</h2>
+  <p>{{ a }}x + {{ b }}y = {{ e }}</p>
+  <p>{{ c }}x + {{ d }}y = {{ f }}</p>
+  
+  <label>Ingresa el valor de x:</label>
+  <input type="number" [(ngModel)]="userX">
+
+  <label>Ingresa el valor de y:</label>
+  <input type="number" [(ngModel)]="userY">
+
+  <button (click)="checkSolution()">Comprobar</button>
+
+  <p>{{ resultMessage }}</p>
+  
+  <div *ngIf="resultMessage.includes('Incorrecto')">
+    <h3>Solución paso a paso:</h3>
+    <ul>
+      <li *ngFor="let step of steps">{{ step }}</li>
+    </ul>
+    </div>
+  </div>
+  </div>
+
+  <div class="container">
+    <h1 class="titulo">📚 Desigualdades</h1>
+  
+    <section class="teoria">
+      <p>Una desigualdad es una expresión matemática donde los valores no son necesariamente iguales, sino que están relacionados por los signos:</p>
+      <ul>
+        <li>">" (mayor que)</li>
+        <li>"<" (menor que)</li>
+        <li>"≥" (mayor o igual que)</li>
+        <li>"≤" (menor o igual que)</li>
+      </ul>
+  
+      <div class="ejemplo">
+        <h2>Ejemplo: Resolver la desigualdad</h2>
+        <p class="highlight">3x - 5 ≤ 10</p>
+        
+        <h3>Paso 1: Despejar x</h3>
+        <p>Sumamos 5 en ambos lados:</p>
+        <p class="highlight">3x ≤ 10 + 5</p>
+        <p>Simplificamos:</p>
+        <p class="highlight">3x ≤ 15</p>
+        
+        <h3>Paso 2: Dividir por 3</h3>
+        <p>Dividimos ambos lados entre 3:</p>
+        <p class="highlight">x ≤ 15 / 3</p>
+        <p>Simplificamos:</p>
+        <p class="highlight">x ≤ 5</p>
+        
+        <h3>Solución:</h3>
+        <p class="highlight">x ≤ 5</p>
+        <p>Es decir, x puede ser cualquier número menor o igual a 5.</p>
+        
+        <p><strong>🔹 Nota:</strong> Si multiplicamos o dividimos por un número negativo, el signo de la desigualdad se invierte.</p>
+      </div>
+    </section>
+  
+    <div class="contenedor">
+        <h2>Resuelve la desigualdad</h2>
+    <p class="highlight">{{ coeficienteX }}x + ({{ terminoIndependiente }}) ≤ {{ resultadoDerecha }}</p>
+    
+    <label>Ingresa la solución para x:</label>
+    <input type="number" [(ngModel)]="respuestaUsuario2">
+    <button (click)="verificarRespuesta2()">Comprobar</button>
+    
+    <p>{{ mensajeResultado }}</p>
+    <div *ngIf="mensajeResultado.includes('Incorrecto')">
+        <h3>Solución paso a paso:</h3>
+        <ul>
+            <li *ngFor="let paso of pasosSolucion">{{ paso }}</li>
+        </ul>
+    </div>
+    </div>
+  </div>
+
+  <div class="examen-container">
+    <h2>Examen Final</h2>
+    <p>Responde las siguientes preguntas:</p>
+  
+    <div *ngFor="let pregunta of listaPreguntas; let i = index" class="pregunta-card">
+      <p class="pregunta-texto">{{ i + 1 }}. {{ pregunta.texto }}</p>
+      <div class="opciones">
+        <label *ngFor="let opcion of pregunta.opciones" class="opcion-label">
+          <input
+            type="radio"
+            [name]="'pregunta' + i"
+            [value]="opcion"
+            [(ngModel)]="respuestasSeleccionadas[i]"
+          />
+          {{ opcion }}
+        </label>
+      </div>
+    </div>
+  
+    <button (click)="evaluarRespuestas()" class="boton-evaluar">Enviar Respuestas</button>
+  
+    <p *ngIf="resultadoExamen" class="resultado">{{ resultadoExamen }}</p>
+  </div>
+
+  

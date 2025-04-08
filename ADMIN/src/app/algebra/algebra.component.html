@@ -1,0 +1,66 @@
+<div class="container mx-auto px-4 py-8">
+  <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Mapa de Aprendizaje</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+      <h3 class="text-xl font-semibold text-blue-600 mb-2">1. Álgebra Básica</h3>
+      <p class="text-gray-600 mb-4">Variables, expresiones algebraicas y operaciones básicas.</p>
+      <button [routerLink]="'/algebra-basica'" 
+              class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors">
+        Ver más
+      </button>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+      <h3 class="text-xl font-semibold text-blue-600 mb-2">2. Ecuaciones y Desigualdades</h3>
+      <p class="text-gray-600 mb-4">Ecuaciones de primer grado, sistemas de ecuaciones lineales, desigualdades.</p>
+      <button (click)="verificarAcceso()" 
+              class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors">
+        Ver más
+      </button>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+      <h3 class="text-xl font-semibold text-blue-600 mb-2">3. Polinomios</h3>
+      <p class="text-gray-600 mb-4">Suma, resta, multiplicación, factorización.</p>
+      <button (click)="verificarPermisoExamen()" 
+              class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors">
+        Ver más
+      </button>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+      <h3 class="text-xl font-semibold text-blue-600 mb-2">4. Funciones</h3>
+      <p class="text-gray-600 mb-4">Concepto de función, funciones lineales y cuadráticas.</p>
+      <button [routerLink]="'/funciones'" 
+              class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors">
+        Ver más
+      </button>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+      <h3 class="text-xl font-semibold text-blue-600 mb-2">5. Radicales y Exponentes</h3>
+      <p class="text-gray-600 mb-4">Propiedades de los exponentes y raíces.</p>
+      <button [routerLink]="'/radicales-exponentes'" 
+              class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors">
+        Ver más
+      </button>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+      <h3 class="text-xl font-semibold text-blue-600 mb-2">6. Progresiones</h3>
+      <p class="text-gray-600 mb-4">Sucesiones de números que siguen un patrón de regularidad.</p>
+      <button [routerLink]="'/tema6'" 
+              class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors">
+        Ver más
+      </button>
+    </div>
+  </div>
+
+  <div class="text-center mt-8">
+    <a routerLink="/user/mis-cursos" 
+       class="inline-block bg-gray-500 text-white px-6 py-2 rounded-lg hover:bg-gray-600 transition-colors font-medium">
+      Volver
+    </a>
+  </div>
+</div>

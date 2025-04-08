@@ -1,0 +1,111 @@
+<div class="font-sans">
+  <div class="relative min-h-screen flex flex-col sm:justify-center items-center bg-gray-100">
+    <div class="relative sm:max-w-sm w-full">
+      <!-- Tarjetas de fondo -->
+      <div class="card bg-blue-400 shadow-lg w-full h-full rounded-3xl absolute transform -rotate-6"></div>
+      <div class="card bg-red-400 shadow-lg w-full h-full rounded-3xl absolute transform rotate-6"></div>
+
+      <!-- Formulario de Login -->
+      <div class="relative w-full rounded-3xl px-6 py-8 bg-gray-100 shadow-md">
+        
+        <!-- Nuevo Logo de Login -->
+        <div class="text-center mb-6">
+          <div class="flex items-center justify-center space-x-3">
+            
+            <h2 class="text-3xl font-bold text-gray-800 bg-gradient-to-r from-blue-500 to-cyan-400 text-transparent bg-clip-text">
+              ¡Bienvenido!
+            </h2>
+          </div>
+          <p class="text-gray-600 mt-2">Inicia sesión para continuar</p>
+        </div>
+
+        <!-- Mensaje de error general -->
+        <div *ngIf="errorMessage" class="error-message">
+          {{ errorMessage }}
+        </div>
+
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="mt-5">
+          <!-- Campo de Usuario -->
+          <div>
+            <input
+              type="text"
+              formControlName="username"
+              placeholder="Nombre de usuario"
+              class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0"
+              [ngClass]="{
+                'is-invalid': loginForm.get('username')?.invalid && loginForm.get('username')?.touched
+              }"
+            />
+            <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched" class="invalid-feedback">
+              <div *ngIf="loginForm.get('username')?.errors?.['required']">
+                Nombre de usuario es requerido.
+              </div>
+            </div>
+          </div>
+
+          <!-- Campo de Contraseña -->
+          <div class="mt-5">
+            <input
+              type="password"
+              formControlName="password"
+              placeholder="Contraseña"
+              class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0"
+              [ngClass]="{
+                'is-invalid': loginForm.get('password')?.invalid && loginForm.get('password')?.touched
+              }"
+            />
+            <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="invalid-feedback">
+              <div *ngIf="loginForm.get('password')?.errors?.['required']">
+                Contraseña es requerida.
+              </div>
+              <div *ngIf="loginForm.get('password')?.errors?.['minlength']">
+                La contraseña debe tener al menos 6 caracteres.
+              </div>
+            </div>
+          </div>
+
+          <!-- Botón de Login -->
+          <div class="mt-6">
+            <button
+              type="submit"
+              class="bg-blue-500 w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105"
+              [disabled]="loginForm.invalid"
+            >
+              Iniciar Sesión
+            </button>
+          </div>
+
+          <!-- Separador "Accede con" -->
+          <div class="flex mt-6 items-center text-center">
+            <hr class="border-gray-300 border-1 w-full rounded-md" />
+            <label class="block font-medium text-sm text-gray-600 w-full"> Accede con </label>
+            <hr class="border-gray-300 border-1 w-full rounded-md" />
+          </div>
+
+          <!-- Botón de Google -->
+          <div class="flex mt-6 justify-center w-full">
+            <button
+              class="bg-red-500 border-none px-4 py-2 rounded-xl cursor-pointer text-white shadow-xl hover:shadow-inner transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105"
+            >
+              Google
+            </button>
+          </div>
+
+          <!-- Enlace de Registro -->
+          <div class="mt-6">
+            <div class="flex justify-center items-center">
+              <label class="mr-2">¿Eres nuevo?</label>
+              <a 
+                routerLink="/register" 
+                routerLinkActive="bg-blue-200"
+                class="block py-3 px-4 text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition duration-300 ease-in-out transform hover:scale-110 shadow-md"
+              >
+                Crea una cuenta
+              </a>
+            </div>
+          </div>         
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

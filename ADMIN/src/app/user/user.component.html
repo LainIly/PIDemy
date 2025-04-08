@@ -1,0 +1,49 @@
+<div class="flex flex-col h-screen bg-gray-100">
+  <!-- Barra de navegación superior -->
+  <div class="bg-gradient-to-r from-cyan-500 to-cyan-400 shadow-md w-full p-3 flex items-center justify-between">
+    <h2 class="text-white font-bold text-xl">Πdemy</h2>
+  </div>
+
+  <!-- Contenido principal -->
+  <div class="flex flex-1">
+    <!-- Sidebar optimizado -->
+    
+<div
+class="p-4 bg-white w-64 shadow-md flex flex-col fixed md:relative h-full transform transition-transform duration-300 ease-in-out"
+[class.-translate-x-full]="!isSideNavVisible"
+[class.md:translate-x-0]="true"
+>
+<nav class="space-y-2">
+
+<a class="flex items-center space-x-3 text-gray-600 py-3 px-4 rounded-md transition duration-200 hover:bg-cyan-100 hover:text-cyan-700"
+routerLink="/user/mis-cursos" routerLinkActive="bg-cyan-100 text-cyan-700">
+<i class="fas fa-book"></i> <span>Mis Cursos</span>
+</a>
+<a class="flex items-center space-x-3 text-gray-600 py-3 px-4 rounded-md transition duration-200 hover:bg-cyan-100 hover:text-cyan-700"
+routerLink="/algebra" routerLinkActive="bg-cyan-100 text-cyan-700">
+<i class="fas fa-square-root-alt"></i> <span>Álgebra</span>
+</a>
+<a class="flex items-center space-x-3 text-gray-600 py-3 px-4 rounded-md transition duration-200 hover:bg-cyan-100 hover:text-cyan-700"
+routerLink="/user/tutorias" routerLinkActive="bg-cyan-100 text-cyan-700">
+<i class="fas fa-chalkboard-teacher"></i> <span>Tutorías</span>
+</a>
+<a class="flex items-center space-x-3 text-gray-600 py-3 px-4 rounded-md transition duration-200 hover:bg-cyan-100 hover:text-cyan-700"
+routerLink="/user/recursos" routerLinkActive="bg-cyan-100 text-cyan-700">
+<i class="fas fa-folder-open"></i> <span>Recursos</span>
+</a>
+
+</nav>
+
+<!-- Botón de Cerrar Sesión (siempre visible) -->
+<a class="flex items-center space-x-3 text-gray-600 py-3 px-4 rounded-md transition duration-200 hover:bg-red-100 hover:text-red-600 mt-auto"
+routerLink="/login">
+<i class="fas fa-sign-out-alt"></i> <span>Cerrar sesión</span>
+</a>
+</div>
+
+    <!-- Área de contenido -->
+    <div class="flex-1 p-6 overflow-y-auto">
+      <router-outlet></router-outlet> <!-- Aquí se cargarán los componentes hijos -->
+    </div>
+  </div>
+</div>

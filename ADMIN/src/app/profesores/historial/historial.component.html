@@ -1,0 +1,29 @@
+<div class="p-6 bg-white shadow-md rounded-lg">
+    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Historial de Actividades</h2>
+  
+    <div class="bg-gray-50 p-4 rounded-lg shadow-md">
+      <ul class="space-y-3">
+        <li *ngFor="let evento of historial" class="flex items-center space-x-4 p-3 bg-white rounded-md shadow">
+          <span class="text-lg"
+            [ngClass]="{
+              'text-cyan-500': evento.tipo === 'curso',
+              'text-green-500': evento.tipo === 'inscripcion',
+              'text-yellow-500': evento.tipo === 'modificacion'
+            }">
+            <i class="fas"
+              [ngClass]="{
+                'fa-book': evento.tipo === 'curso',
+                'fa-user-plus': evento.tipo === 'inscripcion',
+                'fa-edit': evento.tipo === 'modificacion'
+              }">
+            </i>
+          </span>
+          <div>
+            <p class="text-gray-700">{{ evento.mensaje }}</p>
+            <span class="text-sm text-gray-500">{{ evento.fecha }}</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  

@@ -1,0 +1,12 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden; /* Evita el scroll en toda la página */
+  }
+  
+  #app { /* Si usas Angular, aplica esto en el contenedor principal */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  

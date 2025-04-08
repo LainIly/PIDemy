@@ -1,0 +1,187 @@
+<div class="text-center mt-8">
+  <a routerLink="/algebra" 
+     class="inline-block bg-gray-500 text-white px-6 py-2 rounded-lg hover:bg-gray-600 transition-colors font-medium">
+    Volver
+  </a>
+</div>
+<br>
+<div class="container mx-auto px-4 py-8 space-y-12">
+  <!-- Sección 1: Variables en Álgebra -->
+   
+  <div>
+    <h1 class="text-3xl font-bold text-gray-800 mb-6">📚 Álgebra Básica</h1>
+    
+    <section class="bg-white rounded-lg shadow-md p-6">
+      <h2 class="text-2xl font-semibold text-blue-600 mb-4">📌 Variables en Álgebra</h2>
+      <p class="text-gray-700 mb-4">Las variables en álgebra representan valores desconocidos y se expresan con letras como <strong>x</strong> o <strong>y</strong>.</p>
+
+      <div class="bg-gray-50 p-4 rounded-md mt-4">
+        <h3 class="text-xl font-medium text-gray-800 mb-2">✨ Ejemplo</h3>
+        <p class="text-gray-700">Si <strong>x + 3 = 7</strong>, entonces podemos resolverlo restando 3 en ambos lados:</p>
+        <p class="text-green-600 font-medium mt-2"><strong>x = 7 - 3</strong></p>
+        <p class="text-green-600 font-medium"><strong>x = 4</strong></p>
+      </div>
+    </section>
+
+    <section class="bg-white rounded-lg shadow-md p-6 mt-6">
+      <h3 class="text-xl font-semibold text-gray-800 mb-4">📝 Ejercicio Práctico</h3>
+      <p class="text-gray-700 mb-2">Resuelve la siguiente ecuación:</p>
+      <p class="text-gray-800 font-medium mb-4"><strong>{{ ejercicio }}</strong></p>
+
+      <div class="flex flex-col items-center space-y-4">
+        <div class="flex items-center space-x-2">
+          <label for="respuesta" class="text-gray-700">Tu respuesta:</label>
+          <input type="number" id="respuesta" [(ngModel)]="respuestaUsuario" 
+                 class="border border-gray-300 rounded-md p-1 w-16 text-center focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+
+        <button (click)="verificarRespuesta()" 
+                class="bg-blue-500 text-white px-4 py-1 rounded-md hover:bg-blue-600 transition-colors">
+          Verificar
+        </button>
+      </div>
+
+      <p *ngIf="mensaje" class="mt-4 text-green-600 text-center">{{ mensaje }}</p>
+      <p *ngIf="explicacion" [innerHTML]="explicacion" class="mt-2 text-gray-700 text-center"></p>
+    </section>
+  </div>
+
+  <!-- Sección 2: Expresiones Algebraicas -->
+  <div>
+    <h1 class="text-3xl font-bold text-gray-800 mb-6">📘 Expresiones Algebraicas</h1>
+    
+    <section class="bg-white rounded-lg shadow-md p-6">
+      <p class="text-gray-700 mb-4">Una expresión algebraica es una combinación de números, variables y operaciones.</p>
+
+      <div class="bg-gray-50 p-4 rounded-md mt-4">
+        <h3 class="text-xl font-medium text-gray-800 mb-2">Ejemplo</h3>
+        <p class="text-gray-700">Expresión: <strong>4x + 3</strong></p>
+        <p class="text-gray-700">Si <strong>x = 5</strong>, entonces:</p>
+        <p class="text-green-600 font-medium mt-2">4 × 5 + 3 = <strong>23</strong></p>
+      </div>
+    </section>
+
+    <section class="bg-white rounded-lg shadow-md p-6 mt-6">
+      <h3 class="text-xl font-semibold text-gray-800 mb-4">📄 Ejercicio Práctico</h3>
+      <p class="text-gray-700 mb-2">Evalúa la siguiente expresión cuando x = 5:</p>
+      <h2 class="text-2xl font-medium text-gray-800 mb-4"><strong>{{ ejercicio2 }}</strong></h2>
+
+      <div class="flex flex-col items-center space-y-4">
+        <div class="flex items-center space-x-2">
+          <label for="respuesta2" class="text-gray-700">Tu respuesta:</label>
+          <input type="number" id="respuesta2" [(ngModel)]="respuestaUsuario2" 
+                 class="border border-gray-300 rounded-md p-1 w-16 text-center focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+
+        <button (click)="verificarRespuesta2()" 
+                class="bg-blue-500 text-white px-4 py-1 rounded-md hover:bg-blue-600 transition-colors">
+          Verificar
+        </button>
+      </div>
+
+      <p *ngIf="mensaje2" class="mt-4 text-green-600 text-center">{{ mensaje2 }}</p>
+      <p *ngIf="explicacion2" [innerHTML]="explicacion2" class="mt-2 text-gray-700 text-center"></p>
+    </section>
+  </div>
+
+  <!-- Sección 3: Operaciones Básicas -->
+  <div>
+    <h1 class="text-3xl font-bold text-gray-800 mb-6">📚 Operaciones Básicas con Expresiones</h1>
+
+    <section class="bg-white rounded-lg shadow-md p-6 space-y-6">
+      <div>
+        <h2 class="text-2xl font-semibold text-blue-600 mb-4"><strong>📌 Suma y Resta de Términos Semejantes</strong></h2>
+        <p class="text-gray-700 mb-4">Se suman/restan los coeficientes de términos que tienen la misma variable.</p>
+
+        <div class="bg-gray-50 p-4 rounded-md">
+          <h3 class="text-xl font-medium text-gray-800 mb-2">✨ Ejemplo de suma</h3>
+          <p class="text-green-600 font-medium"><strong>3x + 2x = (3 + 2)x = 5x</strong></p>
+          <h3 class="text-xl font-medium text-gray-800 mt-4 mb-2">✨ Ejemplo de resta</h3>
+          <p class="text-green-600 font-medium"><strong>7y − 3y = (7 − 3)y = 4y</strong></p>
+        </div>
+
+        <div class="mt-6">
+          <h2 class="text-2xl font-medium text-gray-800 mb-4"><strong>{{ ejercicio3 }}</strong></h2>
+          <div class="flex flex-col items-center space-y-4">
+            <div class="flex items-center space-x-2">
+              <label class="text-gray-700">Tu respuesta:</label>
+              <input type="number" [(ngModel)]="respuestaUsuario3" 
+                     class="border border-gray-300 rounded-md p-1 w-16 text-center focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <button (click)="verificarRespuesta3()" 
+                    class="bg-blue-500 text-white px-4 py-1 rounded-md hover:bg-blue-600 transition-colors">
+              Verificar
+            </button>
+          </div>
+          <p *ngIf="mensaje3" class="mt-4 text-green-600 text-center">{{ mensaje3 }}</p>
+          <p *ngIf="explicacion3" [innerHTML]="explicacion3" class="mt-2 text-gray-700 text-center"></p>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-semibold text-blue-600 mb-4"><strong>📌 Multiplicación de Expresiones Algebraicas</strong></h2>
+        <p class="text-gray-700 mb-4">La multiplicación de expresiones algebraicas consiste en multiplicar coeficientes y aplicar las propiedades de los exponentes a las variables. Se deben distribuir los términos correctamente y luego simplificar la expresión.</p>
+
+        <div class="bg-gray-50 p-4 rounded-md">
+          <h3 class="text-xl font-medium text-gray-800 mb-2">✨ Ejemplo de Multiplicación</h3>
+          <p class="text-green-600 font-medium"><strong>4x × 3x = 12x</strong></p>
+        </div>
+
+        <div class="mt-6">
+          <h2 class="text-2xl font-medium text-gray-800 mb-4"><strong>{{ ejercicio4 }}</strong></h2>
+          <div class="flex flex-col items-center space-y-4">
+            <div class="flex items-center space-x-2">
+              <label class="text-gray-700">Tu respuesta:</label>
+              <input type="number" [(ngModel)]="respuestaUsuario4" 
+                     class="border border-gray-300 rounded-md p-1 w-16 text-center focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <button (click)="verificarRespuesta4()" 
+                    class="bg-blue-500 text-white px-4 py-1 rounded-md hover:bg-blue-600 transition-colors">
+              Verificar
+            </button>
+          </div>
+          <p *ngIf="mensaje4" class="mt-4 text-green-600 text-center">{{ mensaje4 }}</p>
+          <p *ngIf="explicacion4" [innerHTML]="explicacion4" class="mt-2 text-gray-700 text-center"></p>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-semibold text-blue-600 mb-4"><strong>📌 División de Expresiones Algebraicas</strong></h2>
+        <p class="text-gray-700 mb-4">La división de expresiones algebraicas implica dividir los coeficientes y restar los exponentes de las variables con la misma base. Se debe simplificar la fracción lo más posible.</p>
+
+        <div class="bg-gray-50 p-4 rounded-md">
+          <h3 class="text-xl font-medium text-gray-800 mb-2">✨ Ejemplo de División</h3>
+          <p class="text-green-600 font-medium"><math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mfrac>
+              <mrow><mn>10</mn><msup><mi>x</mi><mn>2</mn></msup></mrow>
+              <mrow><mn>2</mn><mi>x</mi></mrow>
+            </mfrac>
+            <mo>=</mo>
+            <mn>5</mn><mi>x</mi>
+          </math></p>
+        </div>
+
+        <div class="mt-6">
+          <h2 class="text-2xl font-medium text-gray-800 mb-4"><strong>{{ ejercicio5 }}</strong></h2>
+          <div class="flex flex-col items-center space-y-4">
+            <div class="flex items-center space-x-2">
+              <label class="text-gray-700">Tu respuesta:</label>
+              <input type="number" [(ngModel)]="respuestaUsuario5" 
+                     class="border border-gray-300 rounded-md p-1 w-16 text-center focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <button (click)="verificarRespuesta5()" 
+                    class="bg-blue-500 text-white px-4 py-1 rounded-md hover:bg-blue-600 transition-colors">
+              Verificar
+            </button>
+          </div>
+          <p *ngIf="mensaje5" class="mt-4 text-green-600 text-center">{{ mensaje5 }}</p>
+          <p *ngIf="explicacion5" [innerHTML]="explicacion5" class="mt-2 text-gray-700 text-center"></p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <app-examen-final></app-examen-final>
+
+  
+</div>
