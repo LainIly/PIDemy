@@ -1,139 +1,49 @@
-<div class="container">
-    <h1>Concepto de Función</h1>
-    <div class="box">
-        <p>Una función es una relación matemática entre dos conjuntos, el **dominio** y el **rango**, en la que a cada elemento del dominio le corresponde un único valor en el rango. Esta relación permite modelar una gran variedad de fenómenos en ciencia, economía, ingeniería y muchas otras disciplinas.</p>
-        <p>Una función puede representarse de diferentes maneras: mediante expresiones algebraicas, gráficas, tablas de valores o incluso palabras. La característica clave de una función es que no puede haber un mismo valor de entrada con múltiples valores de salida; es decir, para cada <strong>x</strong> en el dominio, existe un único <strong>f(x)</strong> en el rango.</p>
+<section class="bg-white rounded-lg shadow-md p-6 mt-6 text-center">
+    <h2 class="text-2xl font-semibold text-blue-600 mb-4">📘 ¿Qué es una Función?</h2>
+    <p class="text-gray-700 mb-4">Una <strong>función</strong> es una relación entre dos conjuntos donde a cada elemento del primer conjunto (dominio) le corresponde exactamente un valor del segundo conjunto (codominio).</p>
+    <p class="text-gray-700 mb-4">Notación general: <strong>f(x) = expresión matemática</strong></p>
+  </section>
+  
+  <section class="bg-white rounded-lg shadow-md p-6 mt-6 text-center">
+    <h2 class="text-2xl font-semibold text-blue-600 mb-4">📈 Funciones Lineales</h2>
+    <p class="text-gray-700 mb-4">Una función lineal tiene la forma <strong>f(x) = mx + b</strong>, donde <strong>m</strong> es la pendiente y <strong>b</strong> la ordenada al origen. Su gráfica es una línea recta.</p>
+  
+    <div class="bg-gray-50 p-4 rounded-md mt-4">
+      <h3 class="text-xl font-medium text-gray-800 mb-2">✨ Ejemplo</h3>
+      <p class="text-gray-700">Dada la función:</p>
+      <p class="text-gray-700 mt-2 font-semibold">f(x) = 2x + 1</p>
+      <p class="text-green-600 font-medium mt-2">- Pendiente: 2</p>
+      <p class="text-green-600 font-medium">- Cruza el eje Y en: 1</p>
+      <canvas id="graficaFuncion" class="grafica-pequena"></canvas>
     </div>
-
-    <h2>Funciones Lineales</h2>
-    <div class="box">
-        <p>Las funciones lineales son aquellas cuya representación gráfica es una **línea recta**. Se expresan mediante la ecuación general:</p>
-        <p><strong>f(x) = mx + b</strong></p>
-        <ul>
-            <li><strong>m</strong>: Representa la pendiente de la recta, que indica la inclinación y dirección de la función.</li>
-            <li><strong>b</strong>: Es el intercepto en el eje Y, es decir, el punto donde la recta cruza el eje vertical.</li>
-        </ul>
-        <p>Las funciones lineales son ampliamente utilizadas para modelar situaciones de cambio constante, como velocidad uniforme, costos proporcionales o crecimiento lineal.</p>
-
-        <p><strong>Ejemplo:</strong> Si <em>f(x) = 2x + 3</em>, entonces:</p>
-        <ul>
-            <li>Para <strong>x = 1</strong>, f(1) = 2(1) + 3 = **5**</li>
-            <li>Para <strong>x = -2</strong>, f(-2) = 2(-2) + 3 = **-1**</li>
-        </ul>
+  </section>
+  
+  <section class="bg-white rounded-lg shadow-md p-6 mt-6 text-center">
+    <h2 class="text-2xl font-semibold text-blue-600 mb-4">🧠 Ejercicio Práctico</h2>
+    <p class="text-gray-700 mb-2">Evalúa la siguiente función lineal:</p>
+    <p class="text-lg font-bold mb-4">
+      f(x) = {{ m }}x {{ b >= 0 ? '+ ' + b : '- ' + getAbs(b) }}. ¿Cuál es el valor de f({{ xValor }})?
+    </p>
+  
+    <div class="flex justify-center items-center space-x-4 mb-4">
+      <label for="respuesta" class="text-gray-700">Respuesta:</label>
+      <input
+        type="number"
+        id="respuesta"
+        [(ngModel)]="respuesta"
+        class="border border-gray-300 rounded-md p-2 w-24 text-center focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+      <button
+        (click)="verificarRespuesta()"
+        class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition"
+      >
+        Verificar
+      </button>
     </div>
-
-    <h2>Funciones Cuadráticas</h2>
-    <div class="box">
-        <p>Las funciones cuadráticas son aquellas cuya representación gráfica es una **parábola**. Se expresan con la fórmula:</p>
-        <p><strong>f(x) = ax² + bx + c</strong></p>
-        <ul>
-            <li><strong>a</strong>: Define la dirección de la parábola; si es positivo, la parábola se abre hacia arriba; si es negativo, hacia abajo.</li>
-            <li><strong>b</strong>: Afecta la inclinación y desplazamiento de la parábola en el plano.</li>
-            <li><strong>c</strong>: Es el valor donde la parábola intercepta el eje Y.</li>
-        </ul>
-        <p>Este tipo de funciones aparecen en problemas de física, economía y estadística, como el movimiento parabólico de un objeto en caída libre o el análisis de costos en una empresa.</p>
-
-        <p><strong>Ejemplo:</strong> Si <em>f(x) = x² - 4x + 3</em>, entonces:</p>
-        <ul>
-            <li>Para <strong>x = 0</strong>, f(0) = (0)² - 4(0) + 3 = **3**</li>
-            <li>Para <strong>x = 2</strong>, f(2) = (2)² - 4(2) + 3 = **-1**</li>
-        </ul>
-    </div>
-
-    <h2>Operaciones Básicas con Funciones</h2>
-    <div class="box">
-        <p>Se pueden realizar diversas operaciones con funciones, lo que permite combinarlas y crear expresiones más complejas. Algunas operaciones fundamentales son:</p>
-        <ul>
-            <li><strong>Suma de funciones:</strong> (f + g)(x) = f(x) + g(x), combinando los valores de dos funciones.</li>
-            <li><strong>Resta de funciones:</strong> (f - g)(x) = f(x) - g(x), obteniendo la diferencia entre dos funciones.</li>
-            <li><strong>Multiplicación de funciones:</strong> (f * g)(x) = f(x) * g(x), creando una función más compleja a partir de dos funciones originales.</li>
-            <li><strong>División de funciones:</strong> (f / g)(x) = f(x) / g(x), siempre que g(x) ≠ 0.</li>
-        </ul>
-
-        <p><strong>Ejemplo:</strong> Si f(x) = x + 2 y g(x) = x² - 1:</p>
-        <ul>
-            <li><strong>Suma:</strong> (f + g)(x) = (x + 2) + (x² - 1) = **x² + x + 1**</li>
-            <li><strong>Resta:</strong> (f - g)(x) = (x + 2) - (x² - 1) = **-x² + x + 3**</li>
-            <li><strong>Multiplicación:</strong> (f * g)(x) = (x + 2) * (x² - 1) = **x³ + 2x² - x - 2**</li>
-        </ul>
-    </div>
-    <h2>Ejercicios</h2>
-        <div class="box">
-            <p>Resuelve los siguientes ejercicios e ingresa tus respuestas:</p>
-            <ol>
-                <li class="exercise">Determina el valor de f(3) para la función f(x) = 2x + 5.
-                    <input type="number" id="ex1">
-                    <button onclick="checkAnswer(1, 2*3+5)">Verificar</button>
-                    <span class="result" id="res1"></span>
-                </li>
-                <li class="exercise">Calcula el valor de g(-1) para la función g(x) = x² - 4x + 6.
-                    <input type="number" id="ex2">
-                    <button onclick="checkAnswer(2, (-1)**2 - 4*(-1) + 6)">Verificar</button>
-                    <span class="result" id="res2"></span>
-                </li>
-                <li class="exercise">Realiza la suma de las funciones f(x) = x + 1 y g(x) = 2x - 3.
-                    <input type="text" id="ex3">
-                    <button onclick="checkAnswer(3, '3x - 2')">Verificar</button>
-                    <span class="result" id="res3"></span>
-                </li>
-                <li class="exercise">Encuentra el producto de las funciones f(x) = x² y g(x) = x + 1.
-                    <input type="text" id="ex4">
-                    <button onclick="checkAnswer(4, 'x³ + x²')">Verificar</button>
-                    <span class="result" id="res4"></span>
-                </li>
-                <li class="exercise">Determina el valor de la función cuadrática f(x) = -x² + 4x - 3 en x = 2.
-                    <input type="number" id="ex5">
-                    <button onclick="checkAnswer(5, (-2)**2 + 4*2 - 3)">Verificar</button>
-                    <span class="result" id="res5"></span>
-                </li>
-                <li class="exercise">Calcula el valor de la función lineal f(x) = 3x - 2 en x = -1.
-                    <input type="number" id="ex6">
-                    <button onclick="checkAnswer(6, 3*(-1) - 2)">Verificar</button>
-                    <span class="result" id="res6"></span>
-                </li>
-                <li class="exercise">Encuentra el valor de la función cuadrática f(x) = 2x² - 3x + 1 en x = 0.
-                    <input type="number" id="ex7">
-                    <button onclick="checkAnswer(7, 2*(0)**2 - 3*(0) + 1)">Verificar</button>
-                    <span class="result" id="res7"></span>
-                </li>
-            </ol>
-        </div>
-  <!-- <h2>Ejercicios</h2>
-  <div class="box">
-    <p>Resuelve los siguientes ejercicios e ingresa tus respuestas:</p>
-    <ol>
-      <li *ngFor="let exercise of exercises" class="exercise">
-        {{ exercise.question }}
-        <input 
-          [type]="exercise.inputType" 
-          [(ngModel)]="exercise.userAnswer"
-          [attr.id]="'ex' + exercise.id"
-        >
-        <button (click)="checkAnswer(exercise)">Verificar</button>
-        <span 
-          class="result" 
-          [style.color]="exercise.result?.startsWith('✅') ? 'green' : 'red'"
-        >
-          {{ exercise.result }}
-        </span>
-      </li>
-    </ol>
-  </div> -->
-</div>
-
-<!--<script>
-    function checkAnswer(exNumber, correctAnswer) {
-        let userAnswer = document.getElementById(`ex${exNumber}`).value;
-        let resultSpan = document.getElementById(`res${exNumber}`);
-        if (userAnswer == correctAnswer) {
-            resultSpan.textContent = "✅ Correcto!";
-            resultSpan.style.color = "green";
-        } else {
-            resultSpan.textContent = `❌ Incorrecto, la respuesta es ${correctAnswer}`;
-            resultSpan.style.color = "red";
-        }
-    }
-</script> -->
-
-<!--Por qué va el script en el html?-->
-No les digo :v
+  
+    <p *ngIf="mensaje" [ngClass]="{ 'text-green-600': correcto, 'text-red-600': !correcto }">
+      {{ mensaje }}
+    </p>
+  </section>
+  
+  
